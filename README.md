@@ -1,136 +1,179 @@
-Excel Project PR.1 Fundamental Booster
-Overview
 
-This project demonstrates the use of essential Excel functions related to data analysis, referencing, lookup operations, logical formulas, date functions, text manipulation, and dynamic ranges.
-The project is divided into three datasets:
+# Excel Data Analysis and Functions Toolkit
 
-Students Grade Sheet
+## Overview
 
-Sales Data Sheet
+This project demonstrates the use of essential and advanced Excel functions for data analysis. It covers a wide range of concepts including logical formulas, lookup functions, aggregation, text manipulation, date calculations, and dynamic referencing.
 
-Employee Data Sheet
+The project is structured across multiple datasets to simulate real-world scenarios such as student performance analysis, sales data evaluation, and employee records management.
 
-Each sheet includes tasks aligned with the required topics and functions.
+---
 
-Contents and Tasks Completed
-1. Relative & Absolute References
+## Project Objective
 
-Used relative references (A1) in calculations.
+The objective of this project is to:
 
-Used absolute references ($A$1) for fixed values such as grade cutoffs and discount thresholds.
+- Apply core and advanced Excel functions  
+- Perform data analysis using real-world scenarios  
+- Demonstrate logical, lookup, and statistical operations  
+- Build dynamic and efficient spreadsheets  
 
-2. IF Formulas and Nested IFs
-Student Grades:
+---
 
-Classified grades based on total marks using nested IF.
+## Datasets Used
 
-Example:
+The project consists of three main worksheets:
+
+### Students Grade Sheet
+- Student marks and grade classification  
+- Performance analysis using logical formulas  
+
+### Sales Data Sheet
+- Product sales and revenue analysis  
+- Discount calculations and filtering  
+
+### Employee Data Sheet
+- Employee salary and service details  
+- Date calculations and dynamic ranges  
+
+---
+
+## Key Features
+
+### Relative and Absolute Referencing
+- Used relative references (A1) for dynamic calculations  
+- Used absolute references ($A$1) for fixed values  
+
+---
+
+### Logical Functions
+
+- IF and Nested IF for classification  
+- AND / OR for condition-based evaluation  
+
+Examples:
+```
+
 =IF(F2>=90,"A",IF(F2>=80,"B",IF(F2>=70,"C","D")))
-
-Sales Discounts:
-
-Calculated discount based on amount thresholds.
-
-Example:
-=IF(E2>30000, E2*0.10, E2*0.05)
-
-3. IF with AND/OR
-Students:
-
-Identified students scoring above 80 in both Math and Science.
 =IF(AND(C2>80, D2>80), "Yes", "No")
 
-Sales:
+```
 
-Discount eligibility using OR.
-=IF(OR(B2="Laptop", E2>20000), "Eligible", "Not Eligible")
+---
 
-4. COUNTIFS, SUMIFS, AVERAGEIFS
-Students:
+### Aggregation Functions
 
-Counted number of students scoring above 50 in Math.
-=COUNTIFS(C2:C100, ">50")
+- COUNTIFS  
+- SUMIFS  
+- AVERAGEIFS  
 
-Sales:
+Used for filtering and analyzing data based on conditions  
 
-Summed sales for a specific region and product.
-=SUMIFS(E2:E100, C2:C100, "East", B2:B100, "Keyboard")
+---
 
-Students:
+### Lookup Functions
 
-Calculated average score above 60.
-=AVERAGEIFS(F2:F100, F2:F100, ">60")
+- VLOOKUP  
+- XLOOKUP  
+- XMATCH  
 
-5. Lookup Functions (VLOOKUP, XLOOKUP, XMATCH)
-Student Name Lookup:
+Used to retrieve data dynamically from tables  
 
-Retrieved student name from ID.
-=VLOOKUP(A10, 'Students Grade'!A2:I21, 2, FALSE)
+---
 
-Product Price Lookup (Sales Data):
+### INDEX and MATCH
 
-Fetched product price by product code.
-=VLOOKUP(H2, A2:E21, 5, FALSE)
+- Combined INDEX and MATCH for advanced lookup scenarios  
+- Used for multi-condition data retrieval  
 
-XLOOKUP – Employee Salary:
+---
 
-Returned salary based on employee ID.
-=XLOOKUP(G2, A2:A100, D2:D100, "Not Found")
+### Text Functions
 
-XMATCH – Product Position:
+- LEFT, FIND for extracting names  
+- UPPER and LOWER for formatting  
+- TRIM for cleaning text  
 
-Found the position of a product in the list.
-=XMATCH("Laptop", B2:B21)
+---
 
-6. INDEX and MATCH
-Salesperson Monthly Sales:
+### Dynamic Referencing
 
-Extracted sales based on salesperson and month.
-=INDEX(E2:E100, MATCH(1, (D2:D100=H2)*(G2:G100=I2), 0))
+- INDIRECT for dynamic range selection  
+- OFFSET for flexible data ranges  
 
-7. TEXT Functions
+---
 
-Extracted first name:
-=LEFT(B2, FIND(" ", B2)-1)
+### Date and Time Functions
 
-Converted to uppercase and lowercase using UPPER() and LOWER().
+- DATEDIF for calculating years and days  
+- TODAY for current date reference  
 
-8. INDIRECT and OFFSET
-Dynamic Range using INDIRECT:
+---
 
-Referenced a user-selected sheet or range dynamically.
+### Mathematical Functions
 
-OFFSET – Dynamic Salary Range:
+- ROUND  
+- CEILING  
+- FLOOR  
 
-Created dynamic range for salary trend analysis.
-=OFFSET(D2, 0, 0, COUNTA(D:D)-1, 1)
+Used for financial and numerical adjustments  
 
-9. Date & Time Functions
-Years of Service:
+---
 
-Calculated years of service while handling future dates.
-=IF(E2>TODAY(),"Not Available",DATEDIF(E2, TODAY(), "Y"))
+### FILTER Function
 
-Difference in Days:
+- Extracted data based on conditions dynamically  
 
-Found duration between two dates.
-=DATEDIF(E2, TODAY(), "D")
+Example:
+```
 
-10. Math Functions
+=FILTER(A2:I100, F2:F100>80, "No data found")
 
-Rounded salary using:
-=ROUND(D2, -3)
+```
 
-Used CEILING and FLOOR for rounding up or down:
-=CEILING(D2, 1000)
-=FLOOR(D2, 1000)
+---
 
-11. FILTER Function
+## Tech Stack
 
-Extracted all students scoring above 80%.
-=FILTER(A2:I100, F2:F100>80, "No students above 80")
+- Microsoft Excel  
 
-Summary
+---
 
-This project covers all essential Excel analytical techniques including logical formulas, lookup operations, text and date functions, dynamic referencing, and filtering.
-All required tasks under the “Fundamental Booster” assignment have been completed and demonstrated in the respective worksheets.
+## How to Use
+
+1. Open the Excel file  
+2. Navigate through each worksheet  
+3. Review formulas applied in different columns  
+4. Modify input values to observe dynamic results  
+
+---
+
+## Use Cases
+
+- Student performance analysis  
+- Sales reporting and discount calculation  
+- Employee data tracking  
+- Learning advanced Excel functions  
+
+---
+
+## Limitations
+
+- Static dataset  
+- No automation using macros or VBA  
+- Limited scalability for large datasets  
+
+---
+
+## Future Improvements
+
+- Add dashboards using Pivot Tables and Charts  
+- Integrate Power Query for data transformation  
+- Use VBA for automation  
+- Connect with external data sources  
+
+---
+
+## Conclusion
+
+This project demonstrates practical usage of Excel for data analysis by applying a wide range of formulas and functions. It provides a strong foundation for handling real-world datasets efficiently.
